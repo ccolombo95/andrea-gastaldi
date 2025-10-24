@@ -1,0 +1,90 @@
+.Footer {
+  background-color: Black;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+
+  .FooterDataContainer {
+    height: 100%;
+    width: 90vw;
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    .button {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// Breakpoints Responsive
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .Footer {
+    height: 80px;
+    
+    .FooterDataContainer {
+      width: 95vw;
+      
+      .text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Mobile (320px - 768px)
+@media (max-width: 768px) {
+  .Footer {
+    height: 70px;
+    
+    .FooterDataContainer {
+      width: 95vw;
+      padding: 0 1rem;
+      
+      .text {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      
+      .button {
+        .ScrollUpButton {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}
+
+// Small Mobile (320px - 480px)
+@media (max-width: 480px) {
+  .Footer {
+    height: 60px;
+    
+    .FooterDataContainer {
+      .text {
+        font-size: 0.7rem;
+      }
+      
+      .button {
+        .ScrollUpButton {
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/* src/styles/global.scss o donde lo tengas */
+.arrowIconDiagonal {
+  width: 1.5rem;
+  height: auto;
+  margin-left: 4px;
+  transition: transform 0.3s;
+  transform: translate(0, 6px);
+
+  &:hover {
+    transform: translate(2px, 3px);
+  }
+}
+
+/* src/styles/global.scss o donde lo tengas */
+.arrowIconVertical {
+  width: 1.5rem;
+  height: auto;
+  margin-left: 4px;
+  transition: transform 0.3s;
+  transform: translate(0, 3px) rotate(-45deg);
+
+  &:hover {
+    transform: translate(0px, 1px) rotate(-45deg);
+  }
+}

@@ -1,0 +1,29 @@
+.languageSwitch {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  position: relative;
+  .globo {
+    width: 250px;
+  }
+  .langBtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: black;
+
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    .flagImg {
+      width: 1.8rem;
+    }
+  }
+}

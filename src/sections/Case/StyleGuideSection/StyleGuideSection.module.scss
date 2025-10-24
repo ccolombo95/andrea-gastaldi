@@ -1,0 +1,39 @@
+.StyleGuideSection {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.DataContainer {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+
+  .ImgContainer {
+    border: 2px solid rgba(255, 255, 255, 0.257);
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+  }
+  .ColorsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columnas
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+
+    .ColorBox {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.sizesText {
+  width: 95%;
+  text-align: right;
+  padding-left: 3rem;
+  padding: 2rem 3rem;
+}

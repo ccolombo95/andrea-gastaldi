@@ -1,0 +1,73 @@
+.projectsSection {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.projectsSectionTitle {
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  margin: 4rem 0;
+  text-align: left;
+}
+.projectsSectionCarouselContainer {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projectsSectionCarouselContainer::-webkit-scrollbar {
+  display: none;
+}
+
+// Breakpoints Responsive
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .projectsSection {
+    min-height: 60vh;
+  }
+  
+  .projectsSectionTitle {
+    font-size: 1.8rem;
+    margin: 3rem 0;
+  }
+  
+  .projectsSectionCarouselContainer {
+    gap: 1.5rem;
+  }
+}
+
+// Mobile (320px - 768px)
+@media (max-width: 768px) {
+  .projectsSection {
+    min-height: 50vh;
+    padding: 0 1rem;
+  }
+  
+  .projectsSectionTitle {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .projectsSectionCarouselContainer {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+// Small Mobile (320px - 480px)
+@media (max-width: 480px) {
+  .projectsSectionTitle {
+    font-size: 1.3rem;
+    margin: 1.5rem 0;
+  }
+  
+  .projectsSectionCarouselContainer {
+    gap: 0.8rem;
+  }
+}

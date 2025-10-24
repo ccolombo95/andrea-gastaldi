@@ -1,0 +1,55 @@
+.hourContainer {
+  padding: 1.5rem 3rem;
+  background: rgba(212, 212, 212, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 60px;
+  width: 400px;
+
+  .hourText {
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: currentColor;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+// Breakpoints Responsive
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .hourContainer {
+    width: 350px;
+    padding: 1.2rem 2.5rem;
+    
+    .hourText {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Mobile (320px - 768px)
+@media (max-width: 768px) {
+  .hourContainer {
+    width: 300px;
+    padding: 1rem 2rem;
+    
+    .hourText {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Small Mobile (320px - 480px)
+@media (max-width: 480px) {
+  .hourContainer {
+    width: 250px;
+    padding: 0.8rem 1.5rem;
+    
+    .hourText {
+      font-size: 1rem;
+    }
+  }
+}

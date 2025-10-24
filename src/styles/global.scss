@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+
+  color: white;
+  background-color: black;
+  a {
+    color: white;
+  }
+}
+
+body[data-theme="dark"] {
+  color: white;
+  background-color: black;
+  a {
+    color: white;
+  }
+  button {
+    color: white;
+  }
+}
+
+body[data-theme="light"] {
+  color: black;
+  background-color: white;
+  a {
+    color: black;
+  }
+  button {
+    color: black;
+  }
+}
+
+.CaseSection {
+  height: 100%;
+  width: 100%;
+}
+.CaseTitle {
+  padding: 0.7rem 1.5rem;
+  background-color: black;
+  color: white;
+  width: max-content;
+  border-radius: 25px;
+  font-size: 18px;
+  margin: 3.5rem;
+}
+
+.BtnGrayContainer {
+  border-radius: 30px;
+  background-color: rgba(212, 212, 212, 0.1);
+
+  .BtnGray {
+    padding: 2rem 3rem;
+    background-color: rgba(212, 212, 212, 0.05);
+    border-radius: 30px;
+    margin: 5px;
+  }
+}

@@ -1,0 +1,251 @@
+.contactSection {
+  min-height: 60vh;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .contactLeft {
+    width: 700px;
+    height: 500px;
+    perspective: 1200px; /* profundidad 3D */
+
+    .cardInner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &.rotated .cardInner {
+      transform: rotateY(180deg);
+    }
+    .title {
+      font-family: "Work Sans", sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+    .subtitle {
+      font-size: 2rem;
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .cardFront,
+    .cardBack {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      border-radius: 15px;
+      padding: 2.5rem 4rem;
+      background-color: rgba(212, 212, 212, 0.1);
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .cardBack {
+      transform: rotateY(180deg);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+      .contactLinkContainer {
+        width: 300px;
+
+        justify-content: space-between;
+        display: inline-flex;
+        align-items: center;
+
+        a img.behance {
+          width: 35px;
+        }
+        a img.linkedin {
+          width: 35px;
+          margin-bottom: 3px;
+        }
+        a img.mail {
+          width: 30px;
+        }
+        a img.figma {
+          width: 20px;
+        }
+        a img.whatsapp {
+          width: 35px;
+        }
+      }
+    }
+  }
+
+  .contactRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 500px;
+    margin: 0 2rem;
+    .imgContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      height: 330px;
+      img.avatarAn {
+        width: 330px;
+      }
+      img.avatarWink {
+        width: 290px;
+        margin-left: 25px;
+      }
+    }
+  }
+}
+
+// Breakpoints Responsive
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .contactSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    
+    .contactLeft {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      
+      .title {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .cardFront,
+      .cardBack {
+        padding: 2rem 3rem;
+      }
+      
+      .cardBack .contactLinkContainer {
+        width: 250px;
+        gap: 1rem;
+        
+        a img {
+          width: 30px;
+        }
+      }
+    }
+    
+    .contactRight {
+      margin: 0;
+      
+      .imgContainer {
+        height: 250px;
+        
+        img.avatarAn {
+          width: 250px;
+        }
+        
+        img.avatarWink {
+          width: 220px;
+        }
+      }
+    }
+  }
+}
+
+// Mobile (320px - 768px)
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 0 1rem;
+    
+    .contactLeft {
+      height: 350px;
+      
+      .title {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .cardFront,
+      .cardBack {
+        padding: 1.5rem 2rem;
+      }
+      
+      .cardBack .contactLinkContainer {
+        width: 200px;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        
+        a img {
+          width: 25px;
+        }
+      }
+    }
+    
+    .contactRight {
+      .imgContainer {
+        height: 200px;
+        
+        img.avatarAn {
+          width: 200px;
+        }
+        
+        img.avatarWink {
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+// Small Mobile (320px - 480px)
+@media (max-width: 480px) {
+  .contactSection {
+    .contactLeft {
+      height: 300px;
+      
+      .title {
+        font-size: 1.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .cardFront,
+      .cardBack {
+        padding: 1rem 1.5rem;
+      }
+      
+      .cardBack .contactLinkContainer {
+        width: 180px;
+        
+        a img {
+          width: 20px;
+        }
+      }
+    }
+    
+    .contactRight {
+      .imgContainer {
+        height: 150px;
+        
+        img.avatarAn {
+          width: 150px;
+        }
+        
+        img.avatarWink {
+          width: 130px;
+        }
+      }
+    }
+  }
+}

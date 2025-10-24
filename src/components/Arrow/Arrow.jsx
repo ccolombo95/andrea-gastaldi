@@ -1,0 +1,18 @@
+// src/components/Display/Display.jsx
+import { useTheme } from "../../context/ThemeContext";
+import styles from "./Arrow.module.scss";
+import arrowLight from "../../assets/icons/arrow-right-light.svg";
+import arrowDark from "../../assets/icons/arrow-right-dark.svg";
+
+const Arrow = ({ direction = "diagonal", forceWhite = false }) => {
+  const { mode, toggleMode } = useTheme();
+  const iconSrc = forceWhite ? arrowLight : (mode === "dark" ? arrowLight : arrowDark);
+  const iconStyle =
+    direction === "vertical"
+      ? styles.arrowIconVertical
+      : styles.arrowIconDiagonal;
+
+  return <img src={iconSrc} className={iconStyle} alt="Arrow Icon" />;
+};
+
+export default Arrow;

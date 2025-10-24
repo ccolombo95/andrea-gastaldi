@@ -1,0 +1,14 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffff, #0077ff);
+  box-shadow: 0 0 10px #00ffff, 0 0 40px #00ffff;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}

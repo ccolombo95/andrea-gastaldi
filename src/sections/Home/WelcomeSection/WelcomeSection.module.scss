@@ -1,0 +1,134 @@
+.welcomeSection {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 75vh;
+
+  margin: auto;
+  margin-top: 5rem;
+
+  .welcomeContainer {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    .welcomeLeft {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .welcomeTop {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: min-content;
+
+        .welcomeTitle {
+          font-family: "Inter", sans-serif;
+          font-size: 5rem;
+          font-weight: 400;
+
+          text-align: left;
+          width: 40rem;
+        }
+        .welcomeTitle p::after {
+          content: "|";
+          animation: blink 1s step-end infinite;
+          margin-left: 4px;
+        }
+
+        @keyframes blink {
+          from,
+          to {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+      }
+      .welcomeBottom {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+
+        .welcomeTextContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 3rem;
+          height: 100%;
+
+          .welcomeSubtitle {
+            font-family: "Work Sans", sans-serif;
+            font-size: 28px;
+            font-weight: 300;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+            margin: 0;
+          }
+          .welcomeLinks {
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+          }
+          .welcomeLinks a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .welcomeImgContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      height: 53vh;
+      width: 50vw;
+
+      .languageSwitchContainer {
+        display: flex;
+        justify-content: flex-end;
+        transform: translateY(20px);
+      }
+
+      .imageWrapper {
+        position: relative;
+        width: 37rem;
+
+        .avatarAn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 35rem;
+
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+
+          &.active {
+            opacity: 1;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+
+  .welcomeContainerDos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 200px;
+  }
+}
