@@ -37,3 +37,25 @@
   padding-left: 3rem;
   padding: 2rem 3rem;
 }
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .StyleGuideSection {
+    background: red !important;
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .StyleGuideSection {
+    background: green !important;
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .StyleGuideSection {
+    background: yellow !important;
+  }
+}

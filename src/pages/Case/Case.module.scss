@@ -56,3 +56,25 @@
     }
   }
 }
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .bodyContainer {
+    background: red !important;
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .bodyContainer {
+    background: green !important;
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .bodyContainer {
+    background: yellow !important;
+  }
+}

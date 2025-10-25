@@ -5,10 +5,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 75vh;
-
+  min-height: 100vh;
   margin: auto;
-  margin-top: 5rem;
 
   .welcomeContainer {
     display: inline-flex;
@@ -26,15 +24,22 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        max-width: 630px;
         height: min-content;
 
         .welcomeTitle {
           font-family: "Inter", sans-serif;
-          font-size: 5rem;
+          font-size: 6.875rem; // 110px
           font-weight: 400;
 
           text-align: left;
-          width: 40rem;
+          min-width: 45rem;
+
+          p {
+            padding: 0;
+            margin: 3rem 0;
+            letter-spacing: -0.04em;
+          }
         }
         .welcomeTitle p::after {
           content: "|";
@@ -69,10 +74,10 @@
 
           .welcomeSubtitle {
             font-family: "Work Sans", sans-serif;
-            font-size: 28px;
+            font-size: 1.75rem;
             font-weight: 300;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             text-align: left;
             margin: 0;
           }
@@ -92,7 +97,7 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: flex-start;
-      height: 53vh;
+      height: 54vh;
       width: 50vw;
 
       .languageSwitchContainer {
@@ -102,24 +107,9 @@
       }
 
       .imageWrapper {
-        position: relative;
-        width: 37rem;
-
-        .avatarAn {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 35rem;
-
-          object-fit: cover;
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-
-          &.active {
-            opacity: 1;
-            z-index: 2;
-          }
-        }
+        width: 500px;
+        height: 700px;
+        transition: background-image 0.3s ease-in-out;
       }
     }
   }
@@ -130,5 +120,172 @@
     align-items: flex-end;
     width: 100%;
     height: 200px;
+  }
+}
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .welcomeSection {
+    .welcomeContainer {
+      .welcomeLeft {
+        .welcomeTop {
+          .welcomeTitle {
+            min-width: 100%;
+            p {
+              padding: 0;
+              margin: 2rem 0;
+
+              width: 380px;
+              min-width: 380px;
+              max-width: 380px;
+            }
+          }
+        }
+        .welcomeBottom {
+          width: 400px;
+          min-width: 400px;
+          max-width: 400px;
+        }
+      }
+      .welcomeImgContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        height: 550px;
+        width: 480px;
+
+        .imageWrapper {
+          width: 480px;
+          max-width: 100%;
+          height: 550px;
+        }
+      }
+    }
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .welcomeSection {
+    min-height: max-content;
+    margin: 150px auto;
+
+    .welcomeContainer {
+      justify-content: center;
+      gap: 1rem;
+
+      .welcomeLeft {
+        justify-content: center;
+        align-items: center;
+        .welcomeTop {
+          font-size: 5.5rem; // ~88px
+
+          .welcomeTitle {
+            min-width: 100%;
+            p {
+              padding: 0;
+              margin: 2rem 0;
+
+              width: 300px;
+              min-width: 300px;
+              max-width: 300px;
+            }
+          }
+        }
+        .welcomeBottom {
+          width: 400px;
+          min-width: 400px;
+          max-width: 400px;
+        }
+      }
+
+      .welcomeImgContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        height: 550px;
+        width: 450px;
+
+        .imageWrapper {
+          width: 450px;
+          max-width: 100%;
+          height: 550px;
+        }
+      }
+
+      .welcomeBottom {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .welcomeSection {
+    min-height: max-content;
+    margin: 150px auto;
+
+    .welcomeContainer {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      .welcomeLeft {
+        justify-content: center;
+        align-items: center;
+        .welcomeTop {
+          font-size: 4rem;
+
+          .welcomeTitle {
+            min-width: 100%;
+            p {
+              padding: 0;
+              margin: 2rem 0;
+
+              width: 300px;
+              min-width: 300px;
+              max-width: 300px;
+            }
+          }
+        }
+        .welcomeBottom {
+          width: 430px;
+          min-width: 430px;
+          max-width: 430px;
+        }
+      }
+
+      .welcomeImgContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 630px;
+        width: 680px;
+
+        .languageSwitchContainer {
+          display: none;
+        }
+
+        .imageWrapper {
+          width: 100%;
+          max-width: 100%;
+          height: 650px;
+        }
+      }
+
+      .welcomeBottom {
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }

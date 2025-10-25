@@ -1,5 +1,5 @@
 .contactSection {
-  min-height: 60vh;
+  min-height: 100vh;
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
@@ -87,15 +87,31 @@
     height: 500px;
     margin: 0 2rem;
     .imgContainer {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
 
       height: 330px;
+      
+      img {
+        position: absolute;
+        width: 330px;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        
+        &.active {
+          opacity: 1;
+          z-index: 2;
+        }
+      }
+      
       img.avatarAn {
         width: 330px;
       }
+      
       img.avatarWink {
         width: 290px;
         margin-left: 25px;
@@ -105,9 +121,17 @@
 }
 
 // Breakpoints Responsive
-// Tablet (768px - 1024px)
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .contactSection {
+    background: red !important;
+  }
+}
+
+// Tablets
 @media (max-width: 1024px) {
   .contactSection {
+    background: green !important;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -158,9 +182,10 @@
   }
 }
 
-// Mobile (320px - 768px)
+// Móviles
 @media (max-width: 768px) {
   .contactSection {
+    background: yellow !important;
     padding: 0 1rem;
     
     .contactLeft {

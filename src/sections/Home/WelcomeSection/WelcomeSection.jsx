@@ -13,17 +13,18 @@ import Hour from "../../../components/Hour/Hour";
 import LanguageSwitch from "../../../components/LanguageSwitch/LanguageSwitch";
 
 const WelcomeSection = () => {
-  const { mode } = useTheme();
+  const { mode, showWelcome } = useTheme();
   const { lang } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [startTyping, setStartTyping] = useState(false);
 
   const images = [homeImg1, homeImg2];
 
   const texts = {
     en: {
-      title: "Hi, I’m Andrea",
+      title: "Hi, I'm Andrea",
       subtitle:
-        "I’m a UI/UX Designer based in Mexico city, shaping interfaces with clarity & care. I’m currently finishing my master’s degree in front end + UI UX",
+        "I'm a UI/UX Designer based in Mexico city, shaping interfaces with clarity & care. I'm currently finishing my master's degree in front end + UI UX",
     },
     es: {
       title: "Hola, soy Andrea",
@@ -32,7 +33,18 @@ const WelcomeSection = () => {
     },
   };
 
-  const typedTitle = useTypewriter(texts[lang].title, 100, mode);
+  // Iniciar el tipeo solo cuando el WelcomeOverlay haya desaparecido
+  useEffect(() => {
+    if (!showWelcome && !startTyping) {
+      // Dar un pequeño delay para que el overlay termine de desvanecerse
+      const timer = setTimeout(() => {
+        setStartTyping(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [showWelcome, startTyping]);
+
+  const typedTitle = useTypewriter(texts[lang].title, 100, mode, startTyping);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,18 +76,15 @@ const WelcomeSection = () => {
           <div className={styles.languageSwitchContainer}>
             <LanguageSwitch />
           </div>
-          <div className={styles.imageWrapper}>
-            {images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt="Andrea Gastaldi"
-                className={`${styles.avatarAn} ${
-                  index === currentImageIndex ? styles.active : ""
-                }`}
-              />
-            ))}
-          </div>
+          <div 
+            className={styles.imageWrapper}
+            style={{
+              backgroundImage: `url(${images[currentImageIndex]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
         </div>
       </div>
       <div className={styles.welcomeContainerDos}>

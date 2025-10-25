@@ -2,9 +2,9 @@
 import React from "react";
 import styles from "./ReflectionSection.module.scss";
 
-import { useLanguage } from "../../context/LanguageContext";
-import { reflectionById } from "../../data/reflectionData";
-import TitleText from "../../components/TitleText/TitleText";
+import { useLanguage } from "../../../context/LanguageContext";
+import { reflectionById } from "../../../data/reflectionData";
+import TitleText from "../../../components/TitleText/TitleText";
 
 const ReflectionSection = ({ id }) => {
   const { lang } = useLanguage();

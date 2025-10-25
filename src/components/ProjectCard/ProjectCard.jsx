@@ -10,18 +10,16 @@ const ProjectCard = ({
   titleLine2,
   imageSrc,
   imageAlt,
-  imageClassName,
   description,
 }) => {
   const { lang } = useLanguage();
   const navigate = useNavigate();
-  
+
   const handleCaseClick = () => {
     navigate(`/case/${id}`);
-    // Ir directamente al inicio sin scroll
     window.scrollTo(0, 0);
   };
-  
+
   const texts = {
     en: ["Go"],
     es: ["Caso de estudio"],
@@ -36,14 +34,17 @@ const ProjectCard = ({
           {titleLine2}
         </div>
         <div className={styles.projectsSectionImgContainer}>
-          <img src={imageSrc} alt={imageAlt} className={imageClassName} />
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className={`${styles.logo} ${styles[`logo${imageAlt}`] || ""}`}
+          />
         </div>
       </div>
       <div className={styles.projectCardSubtitle}>{description}</div>
       <div className={styles.projectCardLink}>
         <button onClick={handleCaseClick} className={styles.caseButton}>
-          {texts[lang]}
-          <Arrow mode="dark" />
+          <Arrow mode="dark" text={texts[lang]} />
         </button>
       </div>
     </div>

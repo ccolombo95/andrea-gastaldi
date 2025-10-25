@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: "Inter", sans-serif;
+  font-size: 1rem; // 16px base
 
   color: white;
   background-color: black;
@@ -52,7 +53,7 @@ body[data-theme="light"] {
   color: white;
   width: max-content;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 1.125rem; // 18px
   margin: 3.5rem;
 }
 

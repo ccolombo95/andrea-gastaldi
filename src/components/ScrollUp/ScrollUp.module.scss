@@ -1,14 +1,8 @@
 .ScrollUpButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-end;
   transition: transform 0.3s ease;
   cursor: pointer;
   color: white;
-
-  .Text {
-    width: max-content;
-  }
+  width: max-content;
 
   &.rotated {
     bottom: 80px;

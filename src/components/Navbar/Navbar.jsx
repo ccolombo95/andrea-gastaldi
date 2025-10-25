@@ -6,12 +6,10 @@ import Display from "../Display/Display";
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
-import logoDark from "./../../assets/images/logo-andre-dark.svg";
-import logoLight from "./../../assets/images/logo-andre-light.svg";
-import downloadDark from "./../../assets/icons/download-dark.svg";
-import downloadLight from "./../../assets/icons/download-light.svg";
+import { LogoIcon, DownloadIcon } from "../Icons";
 import CV from "../../data/CV.pdf";
 import RESUME from "../../data/RESUME.pdf";
+
 const Navbar = () => {
   const { lang } = useLanguage();
   const { mode } = useTheme();
@@ -43,28 +41,20 @@ const Navbar = () => {
     },
   };
 
-  const logoAn = {
-    dark: logoDark,
-    light: logoLight,
-  };
-
-  const downloadIcons = {
-    light: downloadLight,
-    dark: downloadDark,
-  };
   const downloadTexts = {
     en: "Descargar resume",
     es: "Descargar cv",
   };
 
   const goToHome = () => {
-    navigate('/home');
+    navigate("/home");
   };
 
   const handleDownload = () => {
     const fileToDownload = lang === "es" ? CV : RESUME;
-    const fileName = lang === "es" ? "CV-Andrea-Gastaldi.pdf" : "Resume-Andrea-Gastaldi.pdf";
-    
+    const fileName =
+      lang === "es" ? "CV-Andrea-Gastaldi.pdf" : "Resume-Andrea-Gastaldi.pdf";
+
     // Crear un enlace temporal para descargar el archivo
     const link = document.createElement("a");
     link.href = fileToDownload;
@@ -76,12 +66,11 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
-      <img 
-        src={logoAn[mode]} 
-        className={styles.logoAn} 
-        alt="logo" 
+      <LogoIcon
+        className={styles.logoAn}
+        alt="logo"
         onClick={goToHome}
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: "pointer" }}
       />
       <ul className={styles.links}>
         <li>
@@ -96,8 +85,7 @@ const Navbar = () => {
         <li className={styles.downloadLink}>
           <button onClick={handleDownload} className={styles.downloadButton}>
             {linksText[lang].resume}
-            <img
-              src={downloadIcons[mode]}
+            <DownloadIcon
               alt={downloadTexts[lang]}
               className={styles.downloadIcon}
             />

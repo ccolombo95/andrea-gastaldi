@@ -1,14 +1,15 @@
 .projectsSection {
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 3rem;
 }
 
 .projectsSectionTitle {
-  font-size: 2rem;
+  font-size: 4rem; // 64px
   font-family: "Inter", sans-serif;
-  margin: 4rem 0;
+  margin: 1rem 0;
   text-align: left;
 }
 .projectsSectionCarouselContainer {
@@ -18,56 +19,99 @@
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.projectsSectionCarouselContainer::-webkit-scrollbar {
-  display: none;
+.cursorsContainer {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  span {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 35px;
+    }
+  }
 }
 
 // Breakpoints Responsive
-// Tablet (768px - 1024px)
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .projectsSection {
+    min-height: auto;
+  }
+}
+
+// Tablets
 @media (max-width: 1024px) {
   .projectsSection {
-    min-height: 60vh;
+    min-height: auto;
   }
-  
+
   .projectsSectionTitle {
-    font-size: 1.8rem;
+    font-size: 3rem; // ~48px
     margin: 3rem 0;
   }
-  
+
   .projectsSectionCarouselContainer {
     gap: 1.5rem;
   }
 }
 
-// Mobile (320px - 768px)
+// Móviles
 @media (max-width: 768px) {
   .projectsSection {
-    min-height: 50vh;
+    min-height: auto;
     padding: 0 1rem;
   }
-  
+
   .projectsSectionTitle {
-    font-size: 1.5rem;
+    font-size: 2.5rem; // ~40px
     margin: 2rem 0;
     text-align: center;
   }
-  
+
   .projectsSectionCarouselContainer {
-    gap: 1rem;
-    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-x: visible;
+    align-items: center;
+    padding: 0;
+  }
+
+  .cursorsContainer {
+    display: none; // Ocultar flechas en móvil
   }
 }
 
 // Small Mobile (320px - 480px)
 @media (max-width: 480px) {
   .projectsSectionTitle {
-    font-size: 1.3rem;
+    font-size: 2rem; // ~32px
     margin: 1.5rem 0;
   }
-  
+
   .projectsSectionCarouselContainer {
-    gap: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-x: visible;
+    align-items: center;
+    padding: 0;
+  }
+
+  .cursorsContainer {
+    display: none; // Ocultar flechas en móvil pequeño
   }
 }

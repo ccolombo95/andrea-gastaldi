@@ -6,3 +6,30 @@
   width: 80vw;
   max-width: 1200px;
 }
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .bodyContainer {
+    // background: red !important;
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .bodyContainer {
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .bodyContainer {
+    // background: yellow !important;
+  }
+}

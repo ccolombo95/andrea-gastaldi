@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./ContactSection.module.scss";
 import avatarIdea from "./../../../assets/images/avatar-idea.svg";
 import avatarWink from "./../../../assets/images/avatar-wink.svg";
@@ -38,33 +38,47 @@ const ContactSection = () => {
     es: "Clickeame",
   };
 
-  const [avatarSrc, setAvatarSrc] = useState(avatarIdea);
-  const [avatarClass, setAvatarClass] = useState(styles.avatarAn);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isContactLeftRotated, setIsContactLeftRotated] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const images = [avatarIdea, avatarWink];
 
-  const handleWhatsappClick = () => {
-    setAvatarSrc(avatarWink);
-    setAvatarClass(styles.avatarWink);
-    setTimeout(() => {
-      setAvatarSrc(avatarIdea);
-      setAvatarClass(styles.avatarAn);
-    }, 3000);
-  };
+  // Cambiar imagen automáticamente cada 3 segundos
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [images.length, isHovered]);
 
   const handleContactLeftHover = () => {
     if (isContactLeftVisible) {
-      setAvatarSrc(avatarWink);
-      setAvatarClass(styles.avatarWink);
       setIsContactLeftRotated(true);
+      setIsHovered(true);
+      setCurrentImageIndex(1); // Cambiar a avatarWink
     }
   };
 
   const handleContactLeftLeave = () => {
     if (isContactLeftVisible) {
-      setAvatarSrc(avatarIdea);
-      setAvatarClass(styles.avatarAn);
       setIsContactLeftRotated(false);
+      setIsHovered(false);
+      setCurrentImageIndex(0); // Volver a avatarIdea
     }
+  };
+
+  const handleImageHover = () => {
+    setIsHovered(true);
+    setCurrentImageIndex(1); // Cambiar a avatarWink
+  };
+
+  const handleImageLeave = () => {
+    setIsHovered(false);
+    setCurrentImageIndex(0); // Volver a avatarIdea
   };
 
   return (
@@ -144,8 +158,21 @@ const ContactSection = () => {
       </div>
 
       <div className={styles.contactRight}>
-        <div className={styles.imgContainer}>
-          <img src={avatarSrc} className={avatarClass} alt="Andrea Gastaldi" />
+        <div 
+          className={styles.imgContainer}
+          onMouseEnter={handleImageHover}
+          onMouseLeave={handleImageLeave}
+        >
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt="Andrea Gastaldi"
+              className={`${styles.avatarAn} ${
+                index === currentImageIndex ? styles.active : ""
+              } ${index === 1 ? styles.avatarWink : ""}`}
+            />
+          ))}
         </div>
       </div>
     </div>

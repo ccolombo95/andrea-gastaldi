@@ -24,28 +24,31 @@ const ScrollUp = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Check initial state
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   return (
-    <div 
-      className={`${styles.ScrollUpButton} ${!isFooterVisible ? styles.rotated : ''}`}
+    <div
+      className={`${styles.ScrollUpButton} ${
+        !isFooterVisible ? styles.rotated : ""
+      }`}
       onClick={scrollToTop}
     >
-      <div className={styles.Text}> {linksText[lang]}</div>
-      <div className={styles.icon}>
-        <Arrow direction="vertical" forceWhite={isFooterVisible} />
-      </div>
+      <Arrow
+        direction="vertical"
+        forceWhite={isFooterVisible}
+        text={linksText[lang]}
+      />
     </div>
   );
 };

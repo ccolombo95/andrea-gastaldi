@@ -10,7 +10,7 @@ import StyleGuideSection from "../../sections/Case/StyleGuideSection/StyleGuideS
 import GoalsSection from "../../sections/Case/GoalsSection/GoalsSection";
 import UserSection from "../../sections/Case/UserSection/UserSection";
 import ImpactsSection from "../../sections/Case/ImpactsSection/ImpactsSection";
-import ReflectionSection from "../../sections/ReflectionSection/ReflectionSection";
+import ReflectionSection from "../../sections/Case/ReflectionSection/ReflectionSection";
 import Footer from "../../components/Footer/Footer";
 import { imagesMockup } from "../../assets/images/mockUpImages";
 import { imagesPrincipal } from "../../assets/images/caseImages";

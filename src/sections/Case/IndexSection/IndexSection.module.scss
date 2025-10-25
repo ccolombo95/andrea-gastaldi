@@ -1,0 +1,25 @@
+.IndexSection {
+  // Default styles for 27" screens
+}
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .IndexSection {
+    background: red !important;
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .IndexSection {
+    background: green !important;
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .IndexSection {
+    background: yellow !important;
+  }
+}

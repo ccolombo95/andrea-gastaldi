@@ -1,27 +1,25 @@
-.GoalsSection {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.ReflectionSection {
+  // Default styles for 27" screens
 }
 
 // Breakpoints Responsive
 // Laptops/monitores medianos
 @media (max-width: 1440px) {
-  .GoalsSection {
+  .ReflectionSection {
     background: red !important;
   }
 }
 
 // Tablets
 @media (max-width: 1024px) {
-  .GoalsSection {
+  .ReflectionSection {
     background: green !important;
   }
 }
 
 // Móviles
 @media (max-width: 768px) {
-  .GoalsSection {
+  .ReflectionSection {
     background: yellow !important;
   }
 }

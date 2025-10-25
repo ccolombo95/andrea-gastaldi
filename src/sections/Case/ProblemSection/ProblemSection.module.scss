@@ -4,3 +4,25 @@
 .ProblemParagraph {
   padding: 0 2.5rem 1rem 2.5rem;
 }
+
+// Breakpoints Responsive
+// Laptops/monitores medianos
+@media (max-width: 1440px) {
+  .ProblemSubtitle, .ProblemParagraph {
+    background: red !important;
+  }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+  .ProblemSubtitle, .ProblemParagraph {
+    background: green !important;
+  }
+}
+
+// Móviles
+@media (max-width: 768px) {
+  .ProblemSubtitle, .ProblemParagraph {
+    background: yellow !important;
+  }
+}
