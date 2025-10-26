@@ -1,0 +1,129 @@
+/* src/components/Navbar/Navbar.module.scss */
+
+.navbarSM {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 100px;
+  z-index: 10000000000000000000;
+  padding: 2rem 3rem;
+  border: 3px solid transparent;
+
+  color: currentColor;
+
+  &.menuOpen {
+    background: rgba(212, 212, 212, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logoAn {
+      height: 23px;
+    }
+    .buttonsLeft {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      button img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4rem;
+
+  width: 100%;
+  margin-top: 60px;
+  height: 100%x;
+  z-index: 10000000;
+
+  // Oculto por defecto
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    padding 0.5s ease-in-out;
+  padding: 0;
+
+  &.menuOpen {
+    max-height: 800px; // Altura suficiente para el contenido
+    opacity: 1;
+    padding: 2rem 1rem;
+  }
+
+  .centerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 0 10px;
+
+    span {
+      display: flex;
+      align-items: center;
+      height: 3.5rem;
+      font-size: 2rem;
+
+      padding: 5px 0;
+      width: 100%;
+      border-bottom: 2px solid currentColor;
+    }
+  }
+  .downloadLink {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 1rem 2rem;
+    background: black;
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+
+    .downloadButton {
+      background: transparent;
+      border: none;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 2rem;
+
+      font-family: inherit;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .downloadIcon {
+      width: 1.7rem;
+      margin-top: 2px;
+    }
+  }
+}
+
+.links a {
+  color: currentColor;
+  text-decoration: none;
+}

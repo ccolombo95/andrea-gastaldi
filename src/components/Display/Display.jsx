@@ -9,9 +9,9 @@ const Display = () => {
   const iconSrc = mode === "dark" ? displayLight : displayDark;
 
   return (
-    <div className={styles.displayContainer} onClick={toggleMode}>
+    <button className={styles.displayContainer} onClick={toggleMode}>
       <img src={iconSrc} className={styles.display} alt="Display Icon" />
-    </div>
+    </button>
   );
 };
 

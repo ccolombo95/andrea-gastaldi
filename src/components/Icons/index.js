@@ -4,3 +4,4 @@ export { default as FlagIcon } from './FlagIcon';
 export { default as LogoIcon } from './LogoIcon';
 export { default as BurgerIcon } from './BurgerIcon';
 export { default as CrossIcon } from './CrossIcon';
+export { default as Menu } from '../Menu/Menu';

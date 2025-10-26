@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/Navbar";
+import NavbarSM from "../../components/NavbarSM/NavbarSM";
 import { ThemeProvider } from "./../../context/ThemeContext";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 import IndexSection from "../../sections/Case/IndexSection/IndexSection";
 import OverviewSection from "../../sections/Case/OverviewSection/OverviewSection";
@@ -19,12 +21,13 @@ import styles from "./Case.module.scss";
 
 const Case = () => {
   const { projectId } = useParams();
+  const isMobile = useMediaQuery('(max-width: 767px)');
   const imagePrincipal = imagesPrincipal[projectId];
   const imageMockup = imagesMockup[projectId];
 
   return (
     <>
-      <Navbar />
+      {isMobile ? <NavbarSM /> : <Navbar />}
       <div
         className={`${styles.bodyContainer} ${
           styles[`body-${projectId}`] || ""

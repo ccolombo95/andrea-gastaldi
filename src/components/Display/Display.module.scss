@@ -1,5 +1,11 @@
 .displayContainer {
   cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+
   .display {
     width: 2rem;
     transform: translateY(2px);
