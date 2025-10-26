@@ -68,7 +68,7 @@ const NavbarSM = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={`${styles.navbarSM} ${scrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.menuOpen : ""}`}>
+    <nav className={`${styles.navbarSM} ${scrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.menuOpen : ""}`} data-theme={mode}>
       <div className={styles.buttonsContainer}>
         <LogoIcon
           className={styles.logoAn}
