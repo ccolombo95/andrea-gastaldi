@@ -94,24 +94,24 @@
       align-items: flex-end;
 
       height: 330px;
-      
+
       img {
         position: absolute;
         width: 330px;
         object-fit: cover;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
-        
+
         &.active {
           opacity: 1;
           z-index: 2;
         }
       }
-      
+
       img.avatarAn {
         width: 330px;
       }
-      
+
       img.avatarWink {
         width: 290px;
         margin-left: 25px;
@@ -135,45 +135,45 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    
+
     .contactLeft {
       width: 100%;
       max-width: 600px;
       height: 400px;
-      
+
       .title {
         font-size: 2.5rem;
       }
-      
+
       .subtitle {
         font-size: 1.5rem;
       }
-      
+
       .cardFront,
       .cardBack {
         padding: 2rem 3rem;
       }
-      
+
       .cardBack .contactLinkContainer {
         width: 250px;
         gap: 1rem;
-        
+
         a img {
           width: 30px;
         }
       }
     }
-    
+
     .contactRight {
       margin: 0;
-      
+
       .imgContainer {
         height: 250px;
-        
+
         img.avatarAn {
           width: 250px;
         }
-        
+
         img.avatarWink {
           width: 220px;
         }
@@ -185,46 +185,57 @@
 // Móviles
 @media (max-width: 768px) {
   .contactSection {
-    background: yellow !important;
     padding: 0 1rem;
-    
+    flex-direction: column-reverse;
+    min-height: 100%;
+    gap: 4rem;
+    margin-bottom: 3rem;
+
     .contactLeft {
-      height: 350px;
-      
+      height: 270px;
+      width: 330px;
+
       .title {
         font-size: 2rem;
       }
-      
+
       .subtitle {
         font-size: 1.2rem;
       }
-      
+
       .cardFront,
       .cardBack {
         padding: 1.5rem 2rem;
       }
-      
+
       .cardBack .contactLinkContainer {
         width: 200px;
         flex-wrap: wrap;
         gap: 0.8rem;
-        
+
         a img {
           width: 25px;
         }
       }
     }
-    
+
     .contactRight {
+      height: 500px;
+      width: 100%;
+      justify-content: flex-end;
+
       .imgContainer {
-        height: 200px;
-        
+        justify-content: flex-end;
+        align-items: center;
+        height: 324px;
+        width: 100%;
+
         img.avatarAn {
-          width: 200px;
+          width: 284px;
         }
-        
+
         img.avatarWink {
-          width: 180px;
+          width: 324px;
         }
       }
     }
@@ -236,37 +247,37 @@
   .contactSection {
     .contactLeft {
       height: 300px;
-      
+
       .title {
         font-size: 1.5rem;
       }
-      
+
       .subtitle {
         font-size: 1rem;
       }
-      
+
       .cardFront,
       .cardBack {
         padding: 1rem 1.5rem;
       }
-      
+
       .cardBack .contactLinkContainer {
         width: 180px;
-        
+
         a img {
           width: 20px;
         }
       }
     }
-    
+
     .contactRight {
       .imgContainer {
         height: 150px;
-        
+
         img.avatarAn {
           width: 150px;
         }
-        
+
         img.avatarWink {
           width: 130px;
         }

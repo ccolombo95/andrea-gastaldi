@@ -230,7 +230,7 @@
 @media (max-width: 768px) {
   .welcomeSection {
     min-height: max-content;
-    margin: 150px auto;
+    margin: 150px auto 100px auto;
 
     .welcomeContainer {
       flex-direction: column;
@@ -241,13 +241,12 @@
         justify-content: center;
         align-items: center;
         .welcomeTop {
-          font-size: 4rem;
-
           .welcomeTitle {
             min-width: 100%;
             p {
               padding: 0;
               margin: 2rem 0;
+              font-size: 4rem;
 
               width: 300px;
               min-width: 300px;
@@ -255,10 +254,32 @@
             }
           }
         }
+
         .welcomeBottom {
-          width: 430px;
-          min-width: 430px;
-          max-width: 430px;
+          width: 330px;
+          min-width: 330px;
+          max-width: 330px;
+
+          .welcomeTextContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 3rem;
+            height: 100%;
+
+            .welcomeSubtitle {
+              font-size: 0.9rem;
+            }
+            .welcomeLinks {
+              display: inline-flex;
+              align-items: center;
+              gap: 2rem;
+            }
+            .welcomeLinks a {
+              text-decoration: none;
+            }
+          }
         }
       }
 
@@ -278,7 +299,7 @@
         .imageWrapper {
           width: 100%;
           max-width: 100%;
-          height: 650px;
+          height: 550px;
         }
       }
 
@@ -286,6 +307,13 @@
         justify-content: center;
         align-items: center;
       }
+    }
+    .welcomeContainerDos {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%;
+      height: 100px;
     }
   }
 }

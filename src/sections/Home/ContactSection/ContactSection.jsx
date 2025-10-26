@@ -41,10 +41,9 @@ const ContactSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isContactLeftRotated, setIsContactLeftRotated] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const images = [avatarIdea, avatarWink];
 
-  // Cambiar imagen automáticamente cada 3 segundos
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
@@ -59,7 +58,7 @@ const ContactSection = () => {
     if (isContactLeftVisible) {
       setIsContactLeftRotated(true);
       setIsHovered(true);
-      setCurrentImageIndex(1); // Cambiar a avatarWink
+      setCurrentImageIndex(1);
     }
   };
 
@@ -67,18 +66,18 @@ const ContactSection = () => {
     if (isContactLeftVisible) {
       setIsContactLeftRotated(false);
       setIsHovered(false);
-      setCurrentImageIndex(0); // Volver a avatarIdea
+      setCurrentImageIndex(0);
     }
   };
 
   const handleImageHover = () => {
     setIsHovered(true);
-    setCurrentImageIndex(1); // Cambiar a avatarWink
+    setCurrentImageIndex(1);
   };
 
   const handleImageLeave = () => {
     setIsHovered(false);
-    setCurrentImageIndex(0); // Volver a avatarIdea
+    setCurrentImageIndex(0);
   };
 
   return (
@@ -158,7 +157,7 @@ const ContactSection = () => {
       </div>
 
       <div className={styles.contactRight}>
-        <div 
+        <div
           className={styles.imgContainer}
           onMouseEnter={handleImageHover}
           onMouseLeave={handleImageLeave}
