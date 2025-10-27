@@ -328,10 +328,14 @@
   }
 }
 
-// Móviles
 @media (max-width: 480px) {
   .welcomeSection {
-    min-height: max-content;
     margin: 50px auto 100px auto;
+    .welcomeContainer {
+      .welcomeImgContainer {
+        transform: translateX(-50px);
+        height: 370px;
+      }
+    }
   }
 }
