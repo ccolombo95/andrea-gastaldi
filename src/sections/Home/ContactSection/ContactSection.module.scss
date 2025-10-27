@@ -1,5 +1,5 @@
 .contactSection {
-  min-height: 100vh;
+  min-height: 70vh;
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
@@ -117,14 +117,6 @@
         margin-left: 25px;
       }
     }
-  }
-}
-
-// Breakpoints Responsive
-// Laptops/monitores medianos
-@media (max-width: 1440px) {
-  .contactSection {
-    // background: red !important;
   }
 }
 
