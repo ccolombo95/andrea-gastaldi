@@ -7,10 +7,11 @@
   height: 100vh;
   z-index: 9999;
   animation: fadeIn 0.3s ease-in-out;
-  
+
   // Fondo sólido para tema oscuro
   &.dark {
-    background: linear-gradient(135deg, 
+    background: linear-gradient(
+      135deg,
       hsl(240, 30%, 15%) 0%,
       hsl(240, 30%, 8%) 25%,
       hsl(240, 30%, 12%) 50%,
@@ -18,10 +19,11 @@
       hsl(240, 30%, 10%) 100%
     );
   }
-  
+
   // Fondo sólido para tema claro
   &.light {
-    background: linear-gradient(135deg, 
+    background: linear-gradient(
+      135deg,
       hsl(262, 95%, 85%) 0%,
       hsl(262, 95%, 92%) 25%,
       hsl(262, 95%, 88%) 50%,
@@ -84,11 +86,11 @@
 @media (max-width: 1024px) {
   .welcome {
     gap: 1.5rem;
-    
+
     .title {
       font-size: 4rem;
     }
-    
+
     .star {
       width: 40px;
     }
@@ -99,13 +101,12 @@
 @media (max-width: 768px) {
   .welcome {
     gap: 1rem;
-    flex-direction: column;
-    
+
     .title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       text-align: center;
     }
-    
+
     .star {
       width: 35px;
     }
@@ -116,11 +117,11 @@
 @media (max-width: 480px) {
   .welcome {
     gap: 0.8rem;
-    
+
     .title {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
     }
-    
+
     .star {
       width: 30px;
     }
