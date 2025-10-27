@@ -29,3 +29,13 @@ body[data-theme="dark"] .ScrollUpButton.rotated {
     }
   }
 }
+
+@media (max-width: 480px) {
+  .ScrollUpButton {
+    &.rotated {
+      bottom: 60px;
+
+      right: 5px;
+    }
+  }
+}
