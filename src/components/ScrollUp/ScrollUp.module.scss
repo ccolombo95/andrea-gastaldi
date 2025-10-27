@@ -19,3 +19,13 @@
 body[data-theme="dark"] .ScrollUpButton.rotated {
   color: white;
 }
+// Tablets
+@media (max-width: 1024px) {
+  .ScrollUpButton {
+    &.rotated {
+      bottom: 60px;
+
+      right: 20px;
+    }
+  }
+}

@@ -3,11 +3,11 @@
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   .contactLeft {
     width: 700px;
     height: 500px;
-    perspective: 1200px; /* profundidad 3D */
+    perspective: 1200px;
 
     .cardInner {
       position: relative;
@@ -124,21 +124,22 @@
 // Laptops/monitores medianos
 @media (max-width: 1440px) {
   .contactSection {
-    background: red !important;
+    // background: red !important;
   }
 }
 
 // Tablets
 @media (max-width: 1024px) {
   .contactSection {
-    background: green !important;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
+    width: 100%;
 
     .contactLeft {
       width: 100%;
-      max-width: 600px;
+      max-width: 450px;
       height: 400px;
 
       .title {
@@ -166,16 +167,24 @@
 
     .contactRight {
       margin: 0;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+      align-items: center;
+      height: 400px;
+      width: 450px;
 
       .imgContainer {
+        justify-content: flex-end;
+        align-items: center;
         height: 250px;
+        width: 100%;
 
         img.avatarAn {
-          width: 250px;
+          width: 350px;
         }
 
         img.avatarWink {
-          width: 220px;
+          width: 320px;
         }
       }
     }
@@ -196,11 +205,11 @@
       width: 330px;
 
       .title {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
 
       .subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       .cardFront,
@@ -209,12 +218,12 @@
       }
 
       .cardBack .contactLinkContainer {
-        width: 200px;
+        width: 240px;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 0.5rem;
 
         a img {
-          width: 25px;
+          width: 20px;
         }
       }
     }
