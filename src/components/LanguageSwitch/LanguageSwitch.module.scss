@@ -3,10 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 210px;
   position: relative;
   .globo {
-    width: 250px;
+    width: 210px;
   }
   .langBtn {
     position: absolute;
@@ -18,7 +18,7 @@
     border: none;
     color: black;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
 
