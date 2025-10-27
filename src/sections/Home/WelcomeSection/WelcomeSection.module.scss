@@ -230,7 +230,7 @@
 @media (max-width: 768px) {
   .welcomeSection {
     min-height: max-content;
-    margin: 150px auto 100px auto;
+    margin: 100px auto 100px auto;
 
     .welcomeContainer {
       flex-direction: column;
@@ -247,6 +247,7 @@
               padding: 0;
               margin: 2rem 0;
               font-size: 4rem;
+              height: 150px;
 
               width: 300px;
               min-width: 300px;
