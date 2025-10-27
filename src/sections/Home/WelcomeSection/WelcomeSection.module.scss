@@ -330,8 +330,18 @@
 
 @media (max-width: 480px) {
   .welcomeSection {
-    margin: 50px auto 100px auto;
+    margin: 20px auto 100px auto;
     .welcomeContainer {
+      .welcomeLeft {
+        .welcomeTop {
+          .welcomeTitle {
+            p {
+              margin: 0 0 1rem 0;
+            }
+          }
+        }
+      }
+
       .welcomeImgContainer {
         transform: translateX(-50px);
         height: 370px;

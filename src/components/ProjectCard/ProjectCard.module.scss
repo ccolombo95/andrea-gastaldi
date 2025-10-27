@@ -76,6 +76,7 @@
     height: 350px;
     padding: 2rem 2.5rem;
     margin-right: 0px;
+    gap: 1.5rem;
   }
 
   .projectCardTitle {
@@ -123,11 +124,11 @@
 // Móvil pequeño
 @media (max-width: 480px) {
   .projectCard {
-    width: 350px;
-    min-width: 350px;
-    max-width: 350px;
-    height: 280px;
-    padding: 1rem 1.5rem;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    height: 300px;
+    padding: 1.5rem 1.5rem;
   }
 
   .projectCardTitle {
