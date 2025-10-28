@@ -1,11 +1,13 @@
 import { useRef, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import styles from "./Background.module.scss";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Background = () => {
   const { mode } = useTheme();
   const canvasRef = useRef(null);
   const raf = useRef(null);
+  const isMobile = useMediaQuery('(max-width: 1024px)');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,6 +27,7 @@ const Background = () => {
     let alpha = 0.16;
     let following = false;
     let driftAngle = 0;
+    let isTouching = false;
 
     // 🎨 cargar texturas
     const textureLight = new Image();
@@ -43,15 +46,43 @@ const Background = () => {
       const y = (e.clientY / window.innerHeight) * 100;
       mouse = { x, y };
     };
+    
+    const onMoveTouch = (e) => {
+      if (!isTouching) return;
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        const x = (touch.clientX / window.innerWidth) * 100;
+        const y = (touch.clientY / window.innerHeight) * 100;
+        mouse = { x, y };
+      }
+    };
+    
     const onEnter = () => (following = true);
     const onLeave = () => {
       following = false;
       mouse = { x: 50, y: 50 };
     };
 
+    const onTouchStart = () => {
+      isTouching = true;
+    };
+    
+    const onTouchEnd = () => {
+      isTouching = false;
+      mouse = { x: 50, y: 50 };
+    };
+
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseover", onEnter);
     window.addEventListener("mouseout", onLeave);
+    
+    // Eventos para touch
+    if (isMobile) {
+      window.addEventListener("touchstart", onTouchStart);
+      window.addEventListener("touchmove", onMoveTouch);
+      window.addEventListener("touchend", onTouchEnd);
+      window.addEventListener("touchcancel", onTouchEnd);
+    }
 
     // 🎨 loop de render
     const loop = () => {
@@ -144,8 +175,15 @@ const Background = () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onEnter);
       window.removeEventListener("mouseout", onLeave);
+      
+      if (isMobile) {
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchmove", onMoveTouch);
+        window.removeEventListener("touchend", onTouchEnd);
+        window.removeEventListener("touchcancel", onTouchEnd);
+      }
     };
-  }, [mode]); // 💡 se vuelve a montar limpio en cada cambio de theme
+  }, [mode, isMobile]); // 💡 se vuelve a montar limpio en cada cambio de theme
 
   return <canvas ref={canvasRef} className={styles.canvas} />;
 };
