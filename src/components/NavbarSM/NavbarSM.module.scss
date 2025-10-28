@@ -160,11 +160,12 @@
   .iconContainer {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
+    box-sizing: border-box;
     padding: 4rem 0;
 
     width: 100%;
-    height: 100%;
+    height: calc(100% - 120px);
   }
 }
 
@@ -184,6 +185,13 @@
     padding: 2rem 1rem;
 
     .buttonsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logoAn {
+        font-size: 1.1rem;
+      }
+
       .buttonsLeft {
         button img {
           width: 30px;
