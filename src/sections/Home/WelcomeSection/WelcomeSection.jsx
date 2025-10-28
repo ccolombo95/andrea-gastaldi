@@ -10,7 +10,6 @@ import homeImg1 from "./../../../assets/images/home-img1.png";
 import homeImg2 from "./../../../assets/images/home-img2.png";
 import globo from "./../../../assets/images/globo.png";
 import Hour from "../../../components/Hour/Hour";
-import LanguageSwitch from "../../../components/LanguageSwitch/LanguageSwitch";
 
 const WelcomeSection = () => {
   const { mode, showWelcome } = useTheme();
@@ -73,16 +72,13 @@ const WelcomeSection = () => {
           </div>
         </div>
         <div className={styles.welcomeImgContainer}>
-          <div className={styles.languageSwitchContainer}>
-            <LanguageSwitch />
-          </div>
-          <div 
+          <div
             className={styles.imageWrapper}
             style={{
               backgroundImage: `url(${images[currentImageIndex]})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           />
         </div>

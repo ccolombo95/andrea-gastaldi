@@ -2,16 +2,33 @@
 .bodyContainer {
   padding: 2rem;
   text-align: center;
+  justify-content: center;
 
-  width: 80vw;
+  width: 100%;
   max-width: 1200px;
 }
 
 // Breakpoints Responsive
 // Laptops/monitores medianos
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .bodyContainer {
+    padding: 1.8rem;
+
+    max-width: 1150px;
+  }
+}
+
+// Netbook (1025px - 1366px)
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .bodyContainer {
+    padding: 1.5rem;
+    max-width: 900px;
+  }
+}
+
 @media (max-width: 1440px) {
   .bodyContainer {
-    // background: red !important;
+    max-width: 1000px;
   }
 }
 

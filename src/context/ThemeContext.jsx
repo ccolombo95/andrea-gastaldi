@@ -6,6 +6,7 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");
   const [showWelcome, setShowWelcome] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
   // Activar Welcome al cargar la página
   useEffect(() => {
@@ -36,7 +37,7 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-      value={{ mode, toggleMode, showWelcome, hideWelcome }}
+      value={{ mode, toggleMode, showWelcome, hideWelcome, activeSection, setActiveSection }}
     >
       {children}
     </ThemeContext.Provider>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import Display from "../Display/Display";
 
@@ -12,10 +12,14 @@ import RESUME from "../../data/RESUME.pdf";
 
 const Navbar = () => {
   const { lang } = useLanguage();
-  const { mode } = useTheme();
+  const { mode, activeSection } = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [scrolled, setScrolled] = useState(false);
+
+  // Determinar si estamos en la página home
+  const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,13 +78,34 @@ const Navbar = () => {
       />
       <ul className={styles.links}>
         <li>
-          <Link to="/">{linksText[lang].about}</Link>
+          <Link
+            to="/"
+            className={
+              isHomePage && activeSection === "about" ? styles.active : ""
+            }
+          >
+            {linksText[lang].about}
+          </Link>
         </li>
         <li>
-          <Link to="/proyects">{linksText[lang].projects}</Link>
+          <Link
+            to="/proyects"
+            className={
+              isHomePage && activeSection === "projects" ? styles.active : ""
+            }
+          >
+            {linksText[lang].projects}
+          </Link>
         </li>
         <li>
-          <Link to="/contact">{linksText[lang].contact}</Link>
+          <Link
+            to="/contact"
+            className={
+              isHomePage && activeSection === "contact" ? styles.active : ""
+            }
+          >
+            {linksText[lang].contact}
+          </Link>
         </li>
         <li className={styles.downloadLink}>
           <button onClick={handleDownload} className={styles.downloadButton}>
@@ -90,6 +115,9 @@ const Navbar = () => {
               className={styles.downloadIcon}
             />
           </button>
+        </li>
+        <li>
+          <LanguageSwitch />
         </li>
         <li>
           <Display />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./NavbarSM.module.scss";
 import Display from "../Display/Display";
 import { Menu } from "./../Icons";
@@ -13,10 +13,14 @@ import RESUME from "../../data/RESUME.pdf";
 
 const NavbarSM = () => {
   const { lang } = useLanguage();
-  const { mode } = useTheme();
+  const { mode, activeSection } = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [scrolled, setScrolled] = useState(false);
+
+  // Determinar si estamos en la página home
+  const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +72,12 @@ const NavbarSM = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={`${styles.navbarSM} ${scrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.menuOpen : ""}`} data-theme={mode}>
+    <nav
+      className={`${styles.navbarSM} ${scrolled ? styles.scrolled : ""} ${
+        isMenuOpen ? styles.menuOpen : ""
+      }`}
+      data-theme={mode}
+    >
       <div className={styles.buttonsContainer}>
         <LogoIcon
           className={styles.logoAn}
@@ -83,8 +92,6 @@ const NavbarSM = () => {
             onToggle={setIsMenuOpen}
             className={styles.menuButton}
           />
-
-          <Display />
         </div>
       </div>
       <div className={`${styles.links} ${isMenuOpen ? styles.menuOpen : ""}`}>
@@ -93,13 +100,34 @@ const NavbarSM = () => {
         </div>
         <div className={styles.centerLinks}>
           <span>
-            <Link to="/">{linksText[lang].about}</Link>
+            <Link
+              to="/"
+              className={
+                isHomePage && activeSection === "about" ? styles.active : ""
+              }
+            >
+              {linksText[lang].about}
+            </Link>
           </span>
           <span>
-            <Link to="/proyects">{linksText[lang].projects}</Link>
+            <Link
+              to="/proyects"
+              className={
+                isHomePage && activeSection === "projects" ? styles.active : ""
+              }
+            >
+              {linksText[lang].projects}
+            </Link>
           </span>
           <span>
-            <Link to="/contact">{linksText[lang].contact}</Link>
+            <Link
+              to="/contact"
+              className={
+                isHomePage && activeSection === "contact" ? styles.active : ""
+              }
+            >
+              {linksText[lang].contact}
+            </Link>
           </span>
         </div>
 
@@ -111,6 +139,9 @@ const NavbarSM = () => {
               className={styles.downloadIcon}
             />
           </button>
+        </div>
+        <div className={styles.iconContainer}>
+          <Display />
         </div>
       </div>
     </nav>

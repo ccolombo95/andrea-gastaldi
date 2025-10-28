@@ -26,10 +26,12 @@
       font-weight: 400;
     }
     .subtitle {
-      font-size: 2rem;
+      font-size: 1.2rem;
       font-family: "Work Sans", sans-serif;
     }
-
+    .cardFront .subtitle {
+      opacity: 0.8;
+    }
     .cardFront,
     .cardBack {
       position: absolute;
@@ -115,6 +117,113 @@
       img.avatarWink {
         width: 290px;
         margin-left: 25px;
+      }
+    }
+  }
+}
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .contactSection {
+    margin-top: 3rem;
+    .contactLeft {
+      width: 500px;
+      height: 340px;
+
+      .title {
+        font-size: 2.8rem;
+      }
+      .cardFront .title {
+        height: 6rem;
+      }
+
+      .cardFront,
+      .cardBack {
+        padding: 2.2rem 3.5rem;
+      }
+
+      .cardBack .contactLinkContainer {
+        width: 280px;
+
+        a img.behance,
+        a img.linkedin,
+        a img.whatsapp {
+          width: 32px;
+        }
+        a img.mail {
+          width: 28px;
+        }
+        a img.figma {
+          width: 18px;
+        }
+      }
+    }
+
+    .contactRight {
+      height: 500px;
+
+      .imgContainer {
+        height: 320px;
+
+        img.avatarAn {
+          width: 350px;
+        }
+
+        img.avatarWink {
+          width: 310px;
+        }
+      }
+    }
+  }
+}
+// Netbook (1025px - 1366px)
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .contactSection {
+    .contactLeft {
+      width: 650px;
+      height: 480px;
+
+      .title {
+        font-size: 2.8rem;
+      }
+
+      .subtitle {
+        font-size: 1.8rem;
+      }
+
+      .cardFront,
+      .cardBack {
+        padding: 2.2rem 3.5rem;
+      }
+
+      .cardBack .contactLinkContainer {
+        width: 280px;
+
+        a img.behance,
+        a img.linkedin,
+        a img.whatsapp {
+          width: 32px;
+        }
+        a img.mail {
+          width: 28px;
+        }
+        a img.figma {
+          width: 18px;
+        }
+      }
+    }
+
+    .contactRight {
+      height: 480px;
+
+      .imgContainer {
+        height: 320px;
+
+        img.avatarAn {
+          width: 320px;
+        }
+
+        img.avatarWink {
+          width: 280px;
+        }
       }
     }
   }

@@ -18,12 +18,23 @@
 }
 
 // Breakpoints Responsive
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .hourContainer {
+    width: 300px;
+    padding: 1rem 2rem;
+
+    .hourText {
+      font-size: 1.1rem;
+    }
+  }
+}
+
 // Tablet (768px - 1024px)
 @media (max-width: 1024px) {
   .hourContainer {
     width: 350px;
     padding: 1.2rem 2.5rem;
-    
+
     .hourText {
       font-size: 1.2rem;
     }
@@ -35,7 +46,7 @@
   .hourContainer {
     width: 300px;
     padding: 1rem 2rem;
-    
+
     .hourText {
       font-size: 1.1rem;
     }
@@ -47,7 +58,7 @@
   .hourContainer {
     width: 250px;
     padding: 0.8rem 1.5rem;
-    
+
     .hourText {
       font-size: 1rem;
     }

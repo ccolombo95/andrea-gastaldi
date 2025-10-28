@@ -7,17 +7,13 @@ import globo from "./../../assets/images/globo.png";
 const LanguageSwitch = () => {
   const { lang, toggleLang } = useLanguage();
   const text = {
-    en: "Cambiar a Español",
-    es: "Switch to English",
+    en: "ES",
+    es: "EN",
   };
 
   return (
     <div className={styles.languageSwitch} onClick={toggleLang}>
-      <img src={globo} alt={text[lang]} className={styles.globo} />
-      <button className={styles.langBtn}>
-        {text[lang]}
-        <FlagIcon lang={lang} className={styles.flagImg} />
-      </button>
+      <button className={styles.langBtn}>{text[lang]}</button>
     </div>
   );
 };

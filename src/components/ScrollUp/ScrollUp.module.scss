@@ -19,13 +19,23 @@
 body[data-theme="dark"] .ScrollUpButton.rotated {
   color: white;
 }
+
+@media (max-width: 1440px) {
+  .ScrollUpButton {
+    &.rotated {
+      bottom: 70px;
+
+      right: 10px;
+    }
+  }
+}
 // Tablets
 @media (max-width: 1024px) {
   .ScrollUpButton {
     &.rotated {
-      bottom: 60px;
+      bottom: 70px;
 
-      right: 20px;
+      right: 10px;
     }
   }
 }
@@ -33,7 +43,7 @@ body[data-theme="dark"] .ScrollUpButton.rotated {
 @media (max-width: 480px) {
   .ScrollUpButton {
     &.rotated {
-      bottom: 60px;
+      bottom: 70px;
 
       right: 5px;
     }

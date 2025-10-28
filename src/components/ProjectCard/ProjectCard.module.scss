@@ -65,6 +65,20 @@
     }
   }
 }
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .projectCard {
+    width: 500px;
+    min-width: 500px;
+    max-width: 500px;
+    height: 340px;
+    padding: 1rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .projectCardTitle {
+    font-size: 4rem; // ~72px
+  }
+}
 
 // Breakpoints Responsive para tarjetas
 // Tablet

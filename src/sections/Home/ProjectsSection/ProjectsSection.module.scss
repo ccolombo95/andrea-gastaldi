@@ -50,6 +50,38 @@
 
 // Breakpoints Responsive
 // Laptops/monitores medianos
+@media (min-width: 1367px) and (max-width: 1440px) {
+  .projectsSection {
+    min-height: 100vh;
+    gap: 2.5rem;
+    margin: 1rem 0 2rem 0;
+    margin-top: 3rem;
+  }
+  .projectsSectionTitle {
+    font-size: 3rem; // 64px
+    font-family: "Inter", sans-serif;
+    margin: 0rem 0;
+    text-align: left;
+  }
+}
+
+// Netbook (1025px - 1366px)
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .projectsSection {
+    min-height: auto;
+    gap: 2.5rem;
+  }
+
+  .projectsSectionTitle {
+    font-size: 3.5rem; // ~56px
+    margin: 0.8rem 0;
+  }
+
+  .projectsSectionCarouselContainer {
+    gap: 1.8rem;
+  }
+}
+
 @media (max-width: 1440px) {
   .projectsSection {
     min-height: auto;

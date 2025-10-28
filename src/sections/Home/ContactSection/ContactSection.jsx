@@ -34,7 +34,7 @@ const ContactSection = () => {
     isVisible ? mode + "-visible" : ""
   );
   const subtitle = {
-    en: "HoverMe",
+    en: "HoverMe*",
     es: "Clickeame",
   };
 
